@@ -1,4 +1,3 @@
-require_relative 
 class Store < ActiveRecord::Base
   # https://edgeguides.rubyonrails.org/active_record_basics.html#validations
   # https://edgeguides.rubyonrails.org/active_record_validations.html#numericality
@@ -9,7 +8,7 @@ class Store < ActiveRecord::Base
   validate :check_mens_or_womens_apparel
 
   def check_mens_or_womens_apparel
-    if !mens_apparel or !womens_apparel
+    if !mens_apparel && !womens_apparel
       errors.add(:check_mens_or_womens_apparel, "Cannot have both men and womens lines set to false. One must be true")
     end
   end
