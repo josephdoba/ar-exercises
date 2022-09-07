@@ -7,4 +7,8 @@ require_relative './exercise_4'
 puts "Exercise 5"
 puts "----------"
 
-# Your code goes here ...
+# https://api.rubyonrails.org/classes/ActiveRecord/Calculations.html
+
+puts Store.sum("annual_revenue")
+puts Store.average("annual_revenue")
+puts Store.where(annual_revenue: 1000000..10000000).count
